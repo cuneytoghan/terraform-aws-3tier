@@ -17,10 +17,10 @@ resource "aws_instance" "web1" {
         echo "Hello, world" > /var/www/html/index.html 
         EOF
 
-    tags = merge(
-       var.common_tags,
+  tags = merge(
+    var.common_tags,
     {
-    Name = "web1"
+      Name = "web1"
     },
   )
 
@@ -40,9 +40,9 @@ resource "aws_instance" "web2" {
         EOF
 
   tags = merge(
-       var.common_tags,
+    var.common_tags,
     {
-    Name = "web2"
+      Name = "web2"
     },
   )
 }
@@ -61,10 +61,10 @@ resource "aws_instance" "web3" {
         echo "Hello, world" > /var/www/html/index.html 
         EOF
 
-    tags = merge(
-       var.common_tags,
+  tags = merge(
+    var.common_tags,
     {
-    Name = "web1"
+      Name = "web1"
     },
   )
 }
