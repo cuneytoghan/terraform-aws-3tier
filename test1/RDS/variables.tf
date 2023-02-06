@@ -8,3 +8,11 @@ variable "username" {
   sensitive   = true
   description = "DB username"
 }
+variable "common_tags" {
+  type = map(any)
+  default = {
+    Team = "DevOps"
+    Tool = "Terraform"
+  }
+  description = "resource tags"
+}
