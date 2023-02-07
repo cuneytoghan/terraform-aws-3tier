@@ -8,9 +8,9 @@ resource "aws_instance" "myinstance1" {
   instance_type   = "t2.micro"
   security_groups = ["ssh-sg", "http-sg"]
 
-  # provisioner "local-exec" {
-  #   command = "export ANSIBLE_HOST_KEY_CHECKING=False; ansible-playbook -i \"${self.public_ip},\" playbook.yml -u ec2-user -b"
-  # }
+   provisioner "local-exec" {
+    command = "export ANSIBLE_HOST_KEY_CHECKING=False; ansible-playbook -i \"${self.public_ip},\" playbook.yml -u ec2-user -b"
+  }
 
   key_name = "bastion-key"
 }
